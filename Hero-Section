@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coffee House Hero Slider</title>
+    <!-- Swiper CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        .hero-slider {
+            width: 100%;
+            height: 100vh;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .swiper {
+            width: 100%;
+            height: 100%;
+        }
+
+        .swiper-slide {
+            position: relative;
+            width: 100%;
+            height: 100vh;
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 0 2rem;
+        }
+        
+        /* Add overlay for better text readability */
+        .swiper-slide::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.3);
+            z-index: 1;
+        }
+
+        .slide-content {
+            color: white;
+            max-width: 800px;
+            text-align: center;
+            z-index: 2;
+            padding: 0 20px;
+            animation: fadeInUp 0.8s ease-out;
+        }
+
+        .slide-content .subheading {
+            font-size: 20px;
+            font-weight: 600;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            margin: 0;
+            color: #e6c9a0;
+            margin-bottom: 15px;
+        }
+
+        .slide-content h2 {
+            font-size: 56px;
+            font-weight: 800;
+            margin: 0;
+color:white;
+            line-height: 1.1;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+            margin-bottom: 20px;
+        }
+
+        .slide-content p {
+            font-size: 20px;
+            line-height: 1.5;
+            margin: 0;
+            margin-top: 0.5rem;
+            max-width: 600px;
+            margin: 0 auto;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7);
+        }
+        
+        .slide-content .btn {
+            display: inline-block;
+            margin-top: 30px;
+            padding: 12px 30px;
+            background-color: #6f4e37;
+            color: white;
+            text-decoration: none;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            border-radius: 30px;
+            transition: all 0.3s ease;
+        }
+        
+        .slide-content .btn:hover {
+            background-color: #5a3d2a;
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+        }
+
+        /* Swiper navigation buttons */
+        .swiper-button-next, .swiper-button-prev {
+            color: white;
+            background: rgba(255, 255, 255, 0.2);
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            backdrop-filter: blur(4px);
+            transition: all 0.3s ease;
+        }
+        
+        .swiper-button-next:after, .swiper-button-prev:after {
+            font-size: 20px;
+            font-weight: bold;
+        }
+        
+        .swiper-button-next:hover, .swiper-button-prev:hover {
+            background: rgba(255, 255, 255, 0.3);
+        }
+        
+        /* Pagination styling */
+        .swiper-pagination-bullet {
+            width: 12px;
+            height: 12px;
+            background: rgba(255, 255, 255, 0.5);
+            opacity: 1;
+        }
+        
+        .swiper-pagination-bullet-active {
+            background: #e6c9a0;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .slide-content .subheading {
+                font-size: 16px;
+                letter-spacing: 2px;
+            }
+
+            .slide-content h2 {
+                font-size: 32px;
+            }
+
+            .slide-content p {
+                font-size: 16px;
+                margin-top: 0.5rem;
+            }
+            
+            .slide-content .btn {
+                padding: 10px 25px;
+                font-size: 14px;
+            }
+            
+            .swiper-button-next, .swiper-button-prev {
+                width: 40px;
+                height: 40px;
+            }
+        }
+        
+        /* Animation for content */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .logo {
+            position: absolute;
+            top: 30px;
+            left: 30px;
+            z-index: 10;
+            color: white;
+            font-size: 28px;
+            font-weight: 700;
+            letter-spacing: 1px;
+        }
+        
+        .logo span {
+            color: #e6c9a0;
+        }
+    </style>
+</head>
+<body>
+    <div class="hero-slider">
+        <div class="logo">Sofico<span>Cups</span></div>
+        
+        <div class="swiper mySwiper">
+            <div class="swiper-wrapper">
+                <!-- Slide 1 -->
+                <div class="swiper-slide" style="background-image: url('https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?ixlib=rb-4.0.3&auto=format&fit=crop&w=1950&q=80');">
+                    <div class="slide-content">
+                        <div class="subheading">Freshly Roasted</div>
+                        <h2>Welcome to Our Coffee House</h2>
+                        <p>Experience freshly roasted beans and the finest coffee blends crafted for true connoisseurs.</p>
+                        <a href="https://soficoocup.myshopify.com/collections/all" class="btn">Discover Our Blends</a>
+                    </div>
+                </div>
+
+                <!-- Slide 2 -->
+                <div class="swiper-slide" style="background-image: url('https://images.unsplash.com/photo-1501339847302-ac426a4a7cbb?ixlib=rb-4.0.3&auto=format&fit=crop&w=1950&q=80');">
+                    <div class="slide-content">
+                        <div class="subheading">Premium Quality</div>
+                        <h2>Quality You Can Taste</h2>
+                        <p>Our coffee is ethically sourced, roasted with precision, and delivered fresh to your cup.</p>
+                        <a href="https://soficoocup.myshopify.com/collections/all" class="btn">Our Sourcing Process</a>
+                    </div>
+                </div>
+
+                <!-- Slide 3 -->
+                <div class="swiper-slide" style="background-image: url('https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?ixlib=rb-4.0.3&auto=format&fit=crop&w=1951&q=80');">
+                    <div class="slide-content">
+                        <div class="subheading">Limited Edition</div>
+                        <h2>New Seasonal Blends</h2>
+                        <p>Discover unique flavor profiles in our limited edition coffees, crafted for every season.</p>
+                        <a href="https://soficoocup.myshopify.com/collections/all" class="btn">Explore Seasonal Offerings</a>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Navigation buttons -->
+            <div class="swiper-button-next"></div>
+            <div class="swiper-button-prev"></div>
+            
+            <!-- Pagination -->
+            <div class="swiper-pagination"></div>
+        </div>
+    </div>
+
+    <!-- Swiper JS -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            new Swiper(".mySwiper", {
+                loop: true,
+                autoplay: {
+                    delay: 5000,
+                    disableOnInteraction: false,
+                },
+                speed: 800,
+                effect: "fade",
+                fadeEffect: {
+                    crossFade: true
+                },
+                navigation: {
+                    nextEl: ".swiper-button-next",
+                    prevEl: ".swiper-button-prev",
+                },
+                pagination: {
+                    el: ".swiper-pagination",
+                    clickable: true,
+                },
+            });
+        });
+    </script>
+</body>
+</html>

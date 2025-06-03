@@ -1,0 +1,310 @@
+<section style="background-color: white; padding: 40px 20px;">
+  <div class="quality-metrics-slider-container" style="max-width: 1200px; margin: 0 auto; position: relative; overflow: hidden;"><!-- Slider Track -->
+    <div class="quality-metrics-slider-track" style="display: flex; transition: transform 0.5s ease; padding: 20px 0;">
+      
+      <!-- Card 1 -->
+      <div class="quality-metrics-card">
+        <div class="quality-metrics-header">
+          <div class="quality-metrics-card-icon">
+           </div>
+          <h3>Roast Date Freshness</h3>
+        </div>
+        <div>
+          <p><strong>🕒 What it shows:</strong> How recently the coffee was roasted</p>
+        </div>
+        <div>
+          <p>📅 <strong>Industry Standard:</strong> Within 30 days</p>
+          <p>🌟 <strong style="color: #2a7f62;">Our Standard:</strong> Roasted within the last 7–14 days</p>
+        </div>
+        <div>
+          <p><strong>⬇Why It Matters:</strong> Fresh-roasted beans yield more aromatic, flavorful coffee.</p>
+        </div>
+      </div>
+
+      <!-- Card 2 -->
+      <div class="quality-metrics-card">
+        <div class="quality-metrics-header">
+          <div class="quality-metrics-card-icon">
+           </div>
+          <h3>Cupping Score</h3>
+        </div>
+        <div>
+          <p><strong>☕ What it shows:</strong> Overall quality graded by Q-certified professionals</p>
+        </div>
+        <div>
+          <p>🔬 <strong>Specialty Threshold:</strong> ≥ 80 points</p>
+          <p>🏆 <strong style="color: #2a7f62;">Our Standard:</strong> 84–89+ points</p>
+        </div>
+        <div>
+          <p><strong>⬇Why It Matters:</strong> Higher scores reflect cleaner, more complex, and traceable coffee.</p>
+        </div>
+      </div>
+
+      <!-- Card 3 -->
+      <div class="quality-metrics-card">
+        <div class="quality-metrics-header">
+          <div class="quality-metrics-card-icon">
+           </div>
+          <h3>Grown Elevation</h3>
+        </div>
+        <div>
+          <p><strong>⛰️ What it shows:</strong> Altitude where coffee is cultivated</p>
+        </div>
+        <div>
+          <p>📏 <strong>Industry Average:</strong> 1,200–1,400 meters</p>
+          <p>🏔️ <strong style="color: #2a7f62;">Our Farms:</strong> 1,600–2,100+ meters</p>
+        </div>
+        <div>
+          <p><strong>⬇Why It Matters:</strong> Higher elevations slow bean growth, enhancing acidity and flavor complexity.</p>
+        </div>
+      </div>
+
+      <!-- Card 4 -->
+      <div class="quality-metrics-card">
+        <div class="quality-metrics-header">
+          <div class="quality-metrics-card-icon">
+           </div>
+          <h3>Origin & Traceability</h3>
+        </div>
+        <div>
+          <p><strong>📍 What it shows:</strong> Whether the coffee's farm and region are clearly identified</p>
+        </div>
+        <div>
+          <p>🔍 <strong>Industry Standard:</strong> Often vague or blended sources</p>
+          <p>🧭 <strong style="color: #2a7f62;">Our Standard:</strong> Single origin or micro-lot traceable to farm or co-op</p>
+        </div>
+        <div>
+          <p><strong>⬇Why It Matters:</strong> Transparency ensures ethical sourcing and consistent flavor.</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Navigation -->
+  <div class="quality-metrics-nav">
+    <button class="quality-metrics-slider-prev">
+      <img src="{{ 'arrow.png' | asset_url }}" alt="Previous" style="width: 24px; height: 24px;">
+    </button>
+    <button class="quality-metrics-slider-next">
+      <img src="{{ 'right-arrow.png' | asset_url }}" alt="Next" style="width: 24px; height: 24px;">
+    </button>
+  </div>
+</section>
+
+<style>
+.quality-metrics-card {
+  min-width: calc(100% - 50px);
+  margin: 0 20px;
+  padding: 25px;
+  background: white;
+  color: #333;
+  border-radius: 10px;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+  transition: all 0.4s ease;
+  text-align: left;
+  scroll-snap-align: center;
+}
+.quality-metrics-card.center {
+  background: #1a1a1a !important;
+  color: white !important;
+  transform: scale(1.03);
+}
+.quality-metrics-card.center p,
+.quality-metrics-card.center strong,
+.quality-metrics-card.center h3 {
+  color: white !important;
+}
+.quality-metrics-header {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  margin-bottom: 14px;
+}
+.quality-metrics-header h3 {
+  margin: 0;
+  font-weight:bold;
+  font-size: 24px;
+}
+.quality-metrics-card-icon {
+  width: 32px;
+  height: 32px;
+}
+.quality-metrics-card-icon img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  transition: filter 0.3s ease;
+}
+.quality-metrics-card.center .quality-metrics-card-icon img {
+  filter: invert(1);
+}
+.quality-metrics-nav {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 50px;
+}
+.quality-metrics-nav button {
+  width: 40px;
+  height: 40px;
+  border: none;
+  border-radius: 50%;
+  background: #f5f5f5;
+  cursor: pointer;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.quality-metrics-nav button:hover {
+  background: #e0e0e0;
+}
+@media (min-width: 768px) {
+  .quality-metrics-card {
+    min-width: calc(50% - 40px);
+  }
+}
+@media (min-width: 1024px) {
+  .quality-metrics-card {
+    min-width: calc(33.33% - 40px);
+  }
+}
+</style>
+
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+  const container = document.querySelector('.quality-metrics-slider-container');
+  const track = document.querySelector('.quality-metrics-slider-track');
+  const cards = document.querySelectorAll('.quality-metrics-card');
+  const prevBtn = document.querySelector('.quality-metrics-slider-prev');
+  const nextBtn = document.querySelector('.quality-metrics-slider-next');
+
+  let currentIndex = 0;
+  let startX = 0;
+  let isDragging = false;
+  let currentTranslate = 0;
+  let prevTranslate = 0;
+  let animationID = 0;
+  let autoRotateInterval;
+  let isTransitioning = false;
+
+  if (cards.length <= 1) {
+    prevBtn.style.display = 'none';
+    nextBtn.style.display = 'none';
+    return;
+  }
+
+  function getCardWidthWithMargin() {
+    const card = cards[0];
+    const style = window.getComputedStyle(card);
+    const margin = parseFloat(style.marginLeft) + parseFloat(style.marginRight);
+    return card.offsetWidth + margin;
+  }
+
+  function updateSlider(animate = true) {
+    if (isTransitioning) return;
+    const containerWidth = container.offsetWidth;
+    const cardWidth = getCardWidthWithMargin();
+    const offset = -currentIndex * cardWidth + (containerWidth / 2 - cardWidth / 2);
+
+    if (animate) {
+      isTransitioning = true;
+      track.style.transition = 'transform 0.5s ease';
+      track.addEventListener('transitionend', () => { isTransitioning = false; }, { once: true });
+    } else {
+      track.style.transition = 'none';
+    }
+
+    track.style.transform = `translateX(${offset}px)`;
+    currentTranslate = offset;
+
+    cards.forEach((card, index) => {
+      card.classList.toggle('center', index === currentIndex);
+    });
+  }
+
+  function goToNext() {
+    if (isTransitioning) return;
+    currentIndex = (currentIndex + 1) % cards.length;
+    updateSlider();
+  }
+
+  function goToPrev() {
+    if (isTransitioning) return;
+    currentIndex = (currentIndex - 1 + cards.length) % cards.length;
+    updateSlider();
+  }
+
+  function touchStart(index) {
+    return function(e) {
+      if (isTransitioning) return;
+      startX = e.type.includes('mouse') ? e.clientX : e.touches[0].clientX;
+      isDragging = true;
+      prevTranslate = currentTranslate;
+      animationID = requestAnimationFrame(animation);
+      track.style.cursor = 'grabbing';
+      clearInterval(autoRotateInterval);
+    }
+  }
+
+  function touchEnd() {
+    if (!isDragging) return;
+    isDragging = false;
+    cancelAnimationFrame(animationID);
+
+    const movedBy = currentTranslate - prevTranslate;
+    const swipeThreshold = Math.min(100, window.innerWidth * 0.2);
+
+    if (movedBy < -swipeThreshold) {
+      goToNext();
+    } else if (movedBy > swipeThreshold) {
+      goToPrev();
+    } else {
+      updateSlider();
+    }
+
+    track.style.cursor = 'grab';
+    startAutoRotate();
+  }
+
+  function touchMove(e) {
+    if (!isDragging || isTransitioning) return;
+    const currentX = e.type.includes('mouse') ? e.clientX : e.touches[0].clientX;
+    const diff = currentX - startX;
+    currentTranslate = prevTranslate + diff;
+  }
+
+  function animation() {
+    if (!isDragging) return;
+    track.style.transform = `translateX(${currentTranslate}px)`;
+    animationID = requestAnimationFrame(animation);
+  }
+
+  function startAutoRotate() {
+    clearInterval(autoRotateInterval);
+    autoRotateInterval = setInterval(goToNext, 5000);
+  }
+
+  nextBtn.addEventListener('click', goToNext);
+  prevBtn.addEventListener('click', goToPrev);
+
+  cards.forEach((card, index) => {
+    card.addEventListener('mousedown', touchStart(index));
+    card.addEventListener('touchstart', touchStart(index), { passive: true });
+  });
+
+  window.addEventListener('mousemove', touchMove);
+  window.addEventListener('touchmove', touchMove, { passive: false });
+  window.addEventListener('mouseup', touchEnd);
+  window.addEventListener('touchend', touchEnd);
+  window.addEventListener('dragstart', (e) => e.preventDefault());
+
+  container.addEventListener('mouseenter', () => clearInterval(autoRotateInterval));
+  container.addEventListener('mouseleave', startAutoRotate);
+  window.addEventListener('resize', () => updateSlider(false));
+
+  updateSlider(false);
+  startAutoRotate();
+});
+</script>

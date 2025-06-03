@@ -45,3 +45,6 @@ The HTML uses Shopify's Liquid syntax to handle image assets, for example:
 
 ```liquid
 {{ 'image-name.jpg' | asset_url }}
+
+
+ 

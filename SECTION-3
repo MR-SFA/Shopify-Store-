@@ -1,0 +1,140 @@
+<style>
+  .coffee-section {
+    background-color: white;
+    padding: 60px 5%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: flex-start; /* top align */
+    gap: 60px;
+    max-width: 1300px;
+    margin: 0 auto;
+  }
+
+  .coffee-text {
+    flex: 1 1 45%;
+    text-align: left;
+    align-self: flex-start; /* force top alignment */
+  }
+
+  .coffee-text h2 {
+    font-family: Helvetica, sans-serif;
+    font-weight: 700;
+    font-size: 44px;
+    margin-bottom: 20px;
+    color: #000;
+  }
+
+  .coffee-text p {
+    font-family: Helvetica, sans-serif;
+    font-weight: 400;
+    font-size: 18px;
+    color: black;
+    line-height: 1.6;
+  }
+
+  .coffee-icons {
+    flex: 1 1 45%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+  }
+
+  .coffee-icon-box {
+    background-color: #ffffff;
+    padding: 28px;
+    border-radius: 5px;
+    text-align: left;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .icon-img-1,
+  .icon-img-2,
+  .icon-img-3,
+  .icon-img-4 {
+    display: block;
+    max-width: 100%;
+    height: auto;
+  }
+
+  /* Optional: Customize each icon's size individually */
+  .icon-img-1 {
+    width: 15px;
+  }
+  .icon-img-2 {
+    width: 42px;
+  }
+  .icon-img-3 {
+    width: 44px;
+  }
+  .icon-img-4 {
+    width: 38px;
+  }
+
+  .coffee-icon-box h4 {
+    font-family: Helvetica, sans-serif;
+    font-weight: 700;
+    font-size: 16px;
+    color: #000;
+    margin: 0;
+  }
+
+  .coffee-icon-box p {
+    font-family: Helvetica, sans-serif;
+    font-weight: 400;
+    font-size: 14px;
+    color: #000;
+    line-height: 1.4;
+    margin: 0;
+  }
+
+  @media (max-width: 768px) {
+    .coffee-section {
+      flex-direction: column;
+      padding: 40px 20px;
+    }
+    .coffee-text h2 {
+      font-family: Helvetica, sans-serif;
+      font-weight: 700;
+      font-size: 32px;
+      margin-bottom: 20px;
+      color: #000;
+    }
+    .coffee-icons {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>
+
+<section class="coffee-section">
+  <div class="coffee-text">
+    <h2>Our Coffee Beans</h2>
+    <p>We’re passionate third-generation coffee growers and collaborate with select farms worldwide, each chosen for their commitment to quality, ethical sourcing, and environmental care.</p>
+  </div>
+
+  <div class="coffee-icons">
+    <div class="coffee-icon-box">
+      <img class="icon-img-1" style=" width:40px"src="{{ 'mil.png' | asset_url }}" alt="Artisan small-batch coffee roasting for optimal freshness and flavor">
+      <h4>Small Batch Roasting</h4>
+      <p>Roasted in small batches to deliver the freshest and most flavorful coffee in every cup.</p>
+    </div>
+    <div class="coffee-icon-box">
+      <img class="icon-img-2" src="{{ 'cow.png' | asset_url }}" alt="Single-origin coffee beans sourced from traceable, sustainable farms">
+      <h4>Single Origin</h4>
+      <p>Our beans come from single farms for consistency, traceability, and authentic taste.</p>
+    </div>
+    <div class="coffee-icon-box">
+      <img class="icon-img-3" src="{{ 'coffee-cup.png' | asset_url }}" alt="Carefully slow-roasted coffee to preserve rich aromas and balanced flavor">
+      <h4>Slow Roasting</h4>
+      <p>Beans are roasted slowly to enhance aroma, flavor complexity, and smoothness.</p>
+    </div>
+    <div class="coffee-icon-box">
+      <img class="icon-img-4" src="{{ 'coffee.png' | asset_url }}" alt="Organic coffee farming without pesticides, supporting sustainable agriculture">
+      <h4>Organic Farming</h4>
+      <p>Grown without pesticides or chemicals, focusing on sustainable and eco-friendly methods.</p>
+    </div>
+  </div>
+</section>

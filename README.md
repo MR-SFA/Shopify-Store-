@@ -48,3 +48,4 @@ The HTML uses Shopify's Liquid syntax to handle image assets, for example:
 
 
  
+ 

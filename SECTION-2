@@ -1,0 +1,103 @@
+<style>
+  .text-image-section {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    padding: 60px 5%;
+    max-width: 1300px;
+    margin: 0 auto;
+    gap: 70px;
+  }
+
+  .text-content {
+    flex: 1 1 45%;
+    max-width: 500px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+  }
+
+  .text-content h1 {
+    font-family: Helvetica, sans-serif;
+    font-weight: 700;
+    font-size: 24px;
+    color: #000;
+    margin-bottom: 20px;
+  }
+
+  .text-content p {
+    font-family: Helvetica, sans-serif;
+    font-weight: 400;
+    font-size: 18px;
+    color: black;
+    margin-bottom: 15px;
+  }
+
+  .image-content {
+    flex: 1 1 45%;
+    max-width: 500px;
+    text-align: center;
+  }
+
+  .image-content img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+  }
+
+  .img1,
+  .umag1 {
+    display: none;
+  }
+
+  .image-caption {
+    font-style: italic;
+    font-family: Helvetica, sans-serif;
+    font-size: 14px;
+    color: #666;
+    margin-top: 8px;
+  }
+
+  @media (max-width: 768px) {
+    .text-image-section {
+      flex-direction: column;
+      text-align: center;
+      padding: 40px 20px;
+      gap: 30px;
+    }
+
+    .img1,
+    .umag1 {
+      display: block;
+    }
+
+    .image-content {
+      display: none;
+    }
+
+    .text-content,
+    .image-content {
+      max-width: 100%;
+    }
+  }
+</style>
+
+<section class="text-image-section">
+  <div class="text-content">
+    <h1>Surprising Truth: Most Coffee Isn’t as Fresh as You Think.</h1>
+    <img class="img1" src="{{ 'coffee_image_2.png' | asset_url }}" alt="Freshness in specialty coffee">
+    <div class="imag1">
+      Source: Specialty Coffee Association – “Freshness is one of the most important qualities of great coffee.”
+    </div>
+    <p>This chart reveals how many store-bought coffees lose flavor and aroma within days of roasting — often before they even hit the shelf.</p>
+    <p>With our small-batch roasting and same-week shipping, you always get peak flavor in every cup.</p>
+  </div>
+
+  <div class="image-content">
+    <img src="{{ 'slider_1.webp' | asset_url }}" alt="Freshness in specialty coffee">
+     
+  </div>
+</section>
